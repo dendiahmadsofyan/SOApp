@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
 
 use App\Http\Controllers\web\ImportController;
 
@@ -39,7 +37,7 @@ Route::post('/tconst/update-status/{rkey}', [TConstController::class, 'updateSta
 
 use App\Http\Controllers\web\InitialController;
 
-Route::get('/initial', [InitialController::class, 'index'])->name('initial.index');
+Route::get('/', [InitialController::class, 'index'])->name('initial.index');
 Route::post('/initial/update-status/{id}', [InitialController::class, 'updateStatus'])->name('initial.updateStatus');
 
 use App\Http\Controllers\web\MasterDataController;

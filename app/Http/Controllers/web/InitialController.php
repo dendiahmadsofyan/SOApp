@@ -13,7 +13,7 @@ class InitialController extends Controller
     {
         $initials = DB::select('SELECT id_initial_so, username, tanggal, nama_user, init.status, init.addtime FROM initial_so init LEFT JOIN master_users usr USING(id_user) WHERE usr.nama_user IS NOT NULL;');
 
-        return view('initial.index', compact('initials'));
+        return view('welcome', compact('initials'));
     }
 
     public function updateStatus($id)
